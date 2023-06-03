@@ -41,6 +41,39 @@ Entender un poco mas sobre archivos secuenciales para que el programa pueda gene
 
 # Descripcion de Uso de las funciones del Programa
 
+Acontinuacion veremos algunas funciones muy importantes del programa, primero veamos como funciona el programa, al momento de ejecutarlo tendremos algunas opciones primero veamos las opciones de ingresar datos dentro de las celdas, como podemos ver primero tenemos el excel a pantalla complete visualmente es muy parecido a un excel original.
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/0ddf6164-a9b3-4ed2-a2c3-d3fd587c8321)
+
+Luego tendremos varias opciones veamos una de las principales la cual es el poder ingresar datos y que dicha hoja de excel pueda reconocer los datos dentro de las celdas y este pueda saber como ingresarlos al momento de hacer una suma o una multiplicacion dentro del programa, el usuario puede ingresar cualquier dato que le paresca en este caso ingresemos numeros o bien algunas palabras, el programa se veria de la siguiente forma.
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/3e16475c-7e20-42fd-a64c-862fe76e5ab2)
+
+Otra de las partes muy importantes del programa es el poder aumentar el tamaño de las celdas o columnas, celdas las cuales se pueden ver de la siguiente manera, dependiendo del espacio que desee el usuario ingresar.
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/f996a7ec-7135-4fbb-9e5f-4e3a4eef7336)
+
+Otra de las opcciones muy importantes es poder agregar una hoja nueva dentro de la hoja de excel ya creada por el usuario esta debe de crearse de la siguiente manera, damos en la opcion de insertar y selecionamos la opcion de nueva Hoja e inmediatamente se nos creara la hoja dentro de nuestro programa, em la cual tambien podremos ingresar la informacion que deseemos incluso la informacion que ya se ingresa en la hoja de excel anterior se quedaria y plasmada ahi.
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/7e04bbd0-ddd7-445e-97a0-0e04097191f4)
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/3d9974a3-44a4-4336-9cb8-675d9cabf62d)
+
+Ahora pasaremos a las opcciones mas imporntantes del programa como es la lectura de las celdas a traves de una matriz, entonces al momento de tener nuestros datos ya ingresados en la hoja de calculo tenemos la opccion de hacer una suma o una multimplicacion para realizar dichas operaciones debemos de ingresar primero el signo "=" seguido de la palabra "suma" para multiplicacion seria la palabra "multi" luego ingresar las coordenadas de los datos quiere decir las coordenadas de las celdas de la siguiente manera 
+
+Suma
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/f8a5e99d-d16a-4dc6-9b1c-f345d11caf28)
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/8f5f8b96-c86d-4b4d-98ce-584b64fb506b)
+
+
+Multiplicación
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/ad090e53-8406-4dce-8a64-81013a02158e)
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/32882124-69f4-44d8-a697-d26fb70a943b)
+
 
 # Solucion de Algunos Problemas
 
