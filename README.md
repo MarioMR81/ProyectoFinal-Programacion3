@@ -74,12 +74,29 @@ Multiplicación
 
 ![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/32882124-69f4-44d8-a697-d26fb70a943b)
 
+Al momento de tener nuestras hojas de calculo listas, tenemos la opcion de guardar dicha hoja de calculo, la opcion estara en la parte superior del programa al momento de seleccionar la opcion de archivo se desplagara la opcion de guardar archivo o incluso abrir archivo, veamos las opcciones.
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/b105e3e8-236b-4be5-b952-18bf021f33af)
+
+Guardar Archivo
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/d50412af-d3e9-4900-a812-403cd03e54d9)
+
+Abrir Archivo
+
+![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/cdb7b643-5a56-46c0-b555-2da0fa3cfec6)
+
+Estans seria las opcciones mas importantes del programa las cuales estan presentes en la hoja de calculo.
 
 # Solucion de Algunos Problemas
 
+Algunos problemas que se pueden presentar dentro del programa seria el mal ingreso de las coordenadas de las filas y columnas en donde se encuentra la información ya que puede que ingresamos primero las columnas y luego las filas, lo cual es erroneo primero serian las filas y luego las columnas, otro problema podria ser el mal uso de las palabras para la suma y la multiplicacion mas con la multiplicacion ya que la palabra es multi y por ultimo un error muy comun es al momento de ingresar los datos en las celdas ya que las celdas deben de estar seleccionadas correctamente y al momento de ingresar la informacion presionar el boton de enter.
 
 # Contactos
 
+Mario Quiñonez 7690-21-2086 Programacion 3 Universidad Mariano Galvez Facultad de Ingenieria en Sistemas 
+Erick Tzalam 7690-20-12192 Programacion 3 Universidad Mariano Galvez Facultad de Ingenieria en Sistemas
+Gustavo Monzón 7690-20-20745 Programacion 3 Universidad Mariano Galvez Facultad de Ingenieria en Sistemas
 
 # Diagrama de Clases
 
