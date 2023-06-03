@@ -86,7 +86,7 @@ Abrir Archivo
 
 ![image](https://github.com/MarioMR81/ProyectoFinal-Programacion3/assets/91577396/cdb7b643-5a56-46c0-b555-2da0fa3cfec6)
 
-Estans seria las opcciones mas importantes del programa las cuales estan presentes en la hoja de calculo.
+Estans seria las opciones mas importantes del programa las cuales estan presentes en la hoja de calculo.
 
 # Solucion de Algunos Problemas
 
