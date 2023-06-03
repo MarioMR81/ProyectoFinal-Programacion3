@@ -21,9 +21,6 @@ Solucion de Algunos Problemas
 
 Contactos
 
-Diagrama de Clases
-
-
 # Introducción
 
 Ahora conoceremos mas sobre algunos puntos muy importantes del programa como una guia que se puede utilizar para el mayor funcionamiento del programa para que sea lo mas entendible para el usiario, tambien veremos las diversas opciones que se pueden presentar en la hoja de excel, tales como crear un nuevo archivo, guardar un nuevo archivo y como abrir diversas hojas de excel, por lo que el usuario tiene una gran libertad para interactuar con el programa al igual veremos algunos pequeños errores que se pueden presentar o que talves el usuario no conosca el funcionamiento el programa por lo que se pueden presentar esos errores comunes por el mal usu de la hoja de calculo, tambien veremos algunos objetivos muy importantes que se lograron al momento de ralizar el programa como el poder lograr el conocimiento de una matriz ocatagonal, nodos etc. Los cuales ayudaron a la creacion del proyecto o para tener el maximo rendimiento de la hoja de excel.
