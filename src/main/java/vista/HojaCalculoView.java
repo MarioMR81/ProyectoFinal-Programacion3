@@ -15,32 +15,31 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.*;
 import java.util.*;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
+import model.AppModel;
 import model.HojaCalculoModel;
 
-public class HojaCalculoView extends BorderPane {
-    private Stage stage;
+
+public class HojaCalculoView extends BorderPane implements Serializable{
+
     private TableView<String[]> tableView;
-    private Button calcularSumaButton;
-    private Button calcularMultiplicacionButton;
-    private Button generarTablaHashButton;
 
     HojaCalculoController controller;
+    HojaCalculoModel glbModel;
+    AppModel appModel = new AppModel();
     public HojaCalculoView(Stage stage) {
-        this.stage = stage;
-        controller = new HojaCalculoController(new HojaCalculoModel(100,100),this);
+        controller = new HojaCalculoController(new HojaCalculoModel(50,50),this);
         // Inicializar la interfaz gráfica con los componentes necesarios
         tableView = new TableView<>();
-        calcularSumaButton = new Button("Calcular Suma");
-        calcularMultiplicacionButton = new Button("Calcular Multiplicación");
-        generarTablaHashButton = new Button("Generar Tabla Hash");
         this.setCenter(tableView);
         this.setPrefSize(800,800);
-        HojaCalculoModel model = new HojaCalculoModel(100, 100);
+        HojaCalculoModel model = new HojaCalculoModel(50, 50);
+        glbModel=model;
         this.mostrarTabla(this.obtenerDatosHojaCalculo(model));
         tableView.setEditable(true);
         tableView.getSelectionModel().cellSelectionEnabledProperty().set(true);
@@ -84,41 +83,32 @@ public class HojaCalculoView extends BorderPane {
         tableView.getItems().addAll(Arrays.asList(data));
     }
 
-    public String obtenerValorSeleccionado() {
-        String[] selectedItem = tableView.getSelectionModel().getSelectedItem();
-        if (selectedItem != null) {
-            return selectedItem[0]; // Suponiendo que solo queremos el valor de la primera columna
-        }
-        return null;
-    }
-
-    public void mostrarMensaje(String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Mensaje");
-        alert.setHeaderText(null);
-        alert.setContentText(mensaje);
-        alert.showAndWait();
-    }
-
-    public void mostrarTablaHash(Hashtable<Integer, String> hashTable) {
-        tableView.getColumns().clear();
-        tableView.getItems().clear();
-
-        TableColumn<String[], String> indexColumn = new TableColumn<>("Índice");
-        indexColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()[0]));
-        TableColumn<String[], String> valueColumn = new TableColumn<>("Valor");
-        valueColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue()[1]));
-
-        tableView.getColumns().addAll(indexColumn, valueColumn);
-
-        // Agregar filas a la tabla a partir de la tabla hash
-        for (Map.Entry<Integer, String> entry : hashTable.entrySet()) {
-            String[] row = new String[2];
-            row[0] = entry.getKey().toString();
-            row[1] = entry.getValue();
-            tableView.getItems().add(row);
+    public void guardarHojaCalculo(String direccion) {
+        try (FileOutputStream fos = new FileOutputStream(direccion)) {
+            ObjectOutputStream salida = new ObjectOutputStream(fos);
+            String[][] datos = this.obtenerDatosTabla();
+            salida.writeObject(datos);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
+
+    public String[][] obtenerDatosTabla() {
+        int rows = tableView.getItems().size();
+        int cols = tableView.getColumns().size();
+        String[][] data = new String[rows][cols];
+
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                data[row][col] = tableView.getItems().get(row)[col];
+            }
+        }
+
+        return data;
+    }
+
+
 
     private String[][] obtenerDatosHojaCalculo(HojaCalculoModel model) {
         int rows = model.getNumeroFilas();

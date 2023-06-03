@@ -1,10 +1,14 @@
 package model;
 
+import javafx.stage.Stage;
 import vista.AppView;
 import vista.HojaCalculoView;
 
-public class AppModel {
-    private ListaEnlazada<HojaCalculoView> hojasCalculo;
+import java.io.*;
+
+public class AppModel{
+    public ListaEnlazada<HojaCalculoView> hojasCalculo;
+    AppModel appModel;
     public AppModel() {
         hojasCalculo = new ListaEnlazada<>();
     }
@@ -20,8 +24,6 @@ public class AppModel {
 
     public void reiniciar()
     {
-        //hojasCalculo.removeAll(hojasCalculo);
     }
-
 
 }

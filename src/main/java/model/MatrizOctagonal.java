@@ -1,6 +1,8 @@
 package model;
 
-public class MatrizOctagonal {
+import java.io.Serializable;
+
+public class MatrizOctagonal implements Serializable{
 
     private Nodo[][] matriz;
 
@@ -62,9 +64,8 @@ public class MatrizOctagonal {
         return matriz;
     }
 
-    public void setMatriz(Nodo[][] matriz) {
-        this.matriz = matriz;
-    }
+
+
 
 
     public void eliminar(int fila, int columna) {

@@ -1,6 +1,8 @@
 package model;
 
-public class ListaEnlazada<T> {
+import java.io.Serializable;
+
+public class ListaEnlazada<T>{
     private NodoLista<T> cabeza;
 
     public ListaEnlazada() {

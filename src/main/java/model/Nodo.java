@@ -1,7 +1,9 @@
 package model;
 
 
-public class Nodo {
+import java.io.Serializable;
+
+public class Nodo implements Serializable {
 
     private String dato;
     private Nodo arriba;

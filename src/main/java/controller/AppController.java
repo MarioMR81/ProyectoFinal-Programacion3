@@ -23,11 +23,5 @@ public class AppController {
         this.model = model;
     }
 
-    public AppView getView() {
-        return view;
-    }
 
-    public void setView(AppView view) {
-        this.view = view;
-    }
 }

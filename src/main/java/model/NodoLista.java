@@ -1,6 +1,8 @@
 package model;
 
-public class NodoLista <T>{
+import java.io.Serializable;
+
+public class NodoLista <T> implements Serializable {
     public T valor;
     public NodoLista<T> siguiente;
 

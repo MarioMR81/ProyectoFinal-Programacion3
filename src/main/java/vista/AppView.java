@@ -2,13 +2,19 @@ package vista;
 
 import controller.AppController;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.AppModel;
+import model.HojaCalculoModel;
+import model.Nodo;
 
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +26,7 @@ public class AppView extends BorderPane {
     MenuBar menuBar = new MenuBar();
     AppModel appModel = new AppModel();
     HBox buttonContainer = new HBox();
+    private HojaCalculoModel model;
 
     AppController controller ;
     private List<Button> lista;
@@ -27,10 +34,12 @@ public class AppView extends BorderPane {
 
         lista = new ArrayList<>();
         controller = new AppController(appModel,this);
-        // Configuración de la vista principal de la aplicación
-        // Aquí puedes añadir los componentes y diseños necesarios
+
         MenuItem nuevoArchivo = new MenuItem("Nuevo archivo");
+        MenuItem guardar = new MenuItem("Guardar");
+        MenuItem abrir = new MenuItem("abrir");
         MenuItem nuevoHoja = new MenuItem("Nueva hoja");
+
         nuevoArchivo.setOnAction(event -> {
             controller.getModel().reiniciar();
             lista.removeAll(lista);
@@ -46,11 +55,48 @@ public class AppView extends BorderPane {
             appModel.agregarHojaCalculo(hojaCalculoView);
             this.mostrarHojaCalculo(hojaCalculoView);
         });
+        guardar.setOnAction(Event->{
+            HojaCalculoView hojaCalculoView = new HojaCalculoView(stage);
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Guardar Hoja de Cálculo");
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de hoja de cálculo (*.dat)", "*.dat");
+            fileChooser.getExtensionFilters().add(extFilter);
+            File file = fileChooser.showSaveDialog(stage);
+            if (file != null) {
+                hojaCalculoView.guardarHojaCalculo(file.getAbsolutePath()); // Guardar la primera hoja de cálculo
+            }
+        });
+        abrir.setOnAction(Event->{
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Abrir Hoja de Cálculo");
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Archivos de hoja de cálculo (*.dat)", "*.dat");
+            fileChooser.getExtensionFilters().add(extFilter);
+            File file = fileChooser.showOpenDialog(stage);
+            if (file != null) {
+                try (FileInputStream fis = new FileInputStream(file)) {
+                    ObjectInputStream entrada = new ObjectInputStream(fis);
+                    String[][] datos = (String[][]) entrada.readObject(); // Leer los datos del archivo
+
+                    // Crear una nueva instancia de HojaCalculoView con los datos cargados
+                    HojaCalculoView hojaCalculoView = new HojaCalculoView(stage);
+                    hojaCalculoView.mostrarTabla(datos);
+
+                    // Agregar la nueva hoja de cálculo al modelo y mostrarla
+                    appModel.agregarHojaCalculo(hojaCalculoView);
+                    mostrarHojaCalculo(hojaCalculoView);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
 
         HojaCalculoView hojaCalculoView = new HojaCalculoView(stage);
         appModel.agregarHojaCalculo(hojaCalculoView);
         this.mostrarHojaCalculo(hojaCalculoView);
         archivoMenu.getItems().add(nuevoArchivo);
+        archivoMenu.getItems().add(guardar);
+        archivoMenu.getItems().add(abrir);
         insertarMenu.getItems().add(nuevoHoja);
         menuBar.getMenus().addAll(archivoMenu, insertarMenu, ayudaMenu);
 
@@ -85,6 +131,7 @@ public class AppView extends BorderPane {
         stage.show();
     }
 
+
     public void mostrarHojaCalculo(HojaCalculoView hojaCalculoView) {
         this.setCenter(hojaCalculoView);
         lista.add(new Button((lista.size()+1)+""));
@@ -101,6 +148,7 @@ public class AppView extends BorderPane {
         buttonContainer.getChildren().add(nuevo);
         this.setBottom(buttonContainer);
     }
+
 
     // Resto de la implementación de la vista...
 }
