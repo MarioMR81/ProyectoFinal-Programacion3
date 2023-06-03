@@ -2,6 +2,7 @@
 
 # Descripccion
 
+Acontinuacion veremos una breve explicacion a traves de un manual de usuario o un tipo de documentacion sobre el mejor uso del programa relacionado a una hoja de calculo. veremos el desarrollo de diversas funciones de excel presentadas en un programa desarrollado en el lenguaje de Java, con una interfaz grafica la cual el usuario puede interactuar para lograr, sumas y multiplicaciones dentro de las celdas en la cual el usuario ingreso los datos, al igual veremos tambien como se pueden agregar hojas de excel sin limites dentro del programa tambien el poder generar el archivo guardarlo y abrirlo dentro del programa.
 
 # MANUAL DE USUARIO
 
