@@ -23,21 +23,21 @@ Contactos
 Diagrama de Clases
 
 
-#Introducción
+# Introducción
 
 
-#Objetivos
+# Objetivos
 
 
-#Descripcion de Uso de las funciones del Programa
+# Descripcion de Uso de las funciones del Programa
 
 
-#Solucion de Algunos Problemas
+# Solucion de Algunos Problemas
 
 
-#Contactos
+# Contactos
 
 
-#Diagrama de Clases
+# Diagrama de Clases
 
 
