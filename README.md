@@ -98,6 +98,5 @@ Mario Quiñonez 7690-21-2086 Programacion 3 Universidad Mariano Galvez Facultad 
 Erick Tzalam 7690-20-12192 Programacion 3 Universidad Mariano Galvez Facultad de Ingenieria en Sistemas
 Gustavo Monzón 7690-20-20745 Programacion 3 Universidad Mariano Galvez Facultad de Ingenieria en Sistemas
 
-# Diagrama de Clases
 
 
